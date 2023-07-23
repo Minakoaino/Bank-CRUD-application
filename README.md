@@ -2,27 +2,6 @@
 
 This is a Flask application for managing a banking system.
 
-The app folder structure is the following:
-app/
-├── static/
-│   └── css/
-│       └── styles.css
-├── templates/
-│   └── home.html
-│   └── create_bank.html
-│   └── list_banks.html
-│   └── view_bank.html
-│   └── update_bank.html
-│   └── delete_bank.html
-
-├── models.py
-├── routes.py
-├── database.py
-├── __init__.py
-├── requirements.txt
-tests/
-├── test_app.py
-
 This Flask application consists of several routes to create, list, view, and update banks. Here's a summary of the routes:
 /bank/create: This route handles the creation of a bank. It handles both GET and POST requests. If a POST request is made, it retrieves the bank details from the form, creates a new Bank object, adds it to the database, and redirects to the list of banks. If a GET request is made, it renders the template for creating a bank.
 
@@ -51,6 +30,7 @@ create_bank.html: Template for creating a bank.
 view_bank.html: Template for viewing bank details.
 update_bank.html: Template for updating bank information.
 list_banks.html: Template for listing all banks.
+delete_banks.html: Template for deleting bank information.
 static/css directory: Holds static files, specifically CSS files.
 
 styles.css: A sample CSS file for styling the HTML templates.
