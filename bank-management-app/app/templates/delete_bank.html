@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UPDATE BANK</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+      </head>
+      <body>
+      <div class="bg"></div>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('home') }}">Bank App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('create_bank') }}">Create Bank</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('list_banks') }}">List Banks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('update_bank') }}">Update Banks</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('delete_bank') }}">Delete Banks</a>
+                  </li>              
+                </ul>
+            </div>
+        </div>
+      </nav>
+      <head>
+          <title>Update Bank</title>
+      </head>
+      <head>
+          <title>Update Bank</title>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+          <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+          <style>
+              body {
+                  color: white;
+              }
+          </style>
+      </head>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Delete Bank</h1>
+    <form action="{{ url_for('delete_bank') }}" method="post">
+        <div class="mb-3">
+            <label for="bank_id" class="form-label">Select Bank:</label>
+            <select name="bank_id" id="bank_id" class="form-select">
+                {% for bank in banks %}
+                <option value="{{ bank.id }}">{{ bank.name }} - {{ bank.location }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-danger" name="delete_button">Delete Bank</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+</body>
+</html>

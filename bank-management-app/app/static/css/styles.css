@@ -1,0 +1,246 @@
+.bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(circle at 30% 86%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 55% 100%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 40% 75%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 7% 99%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 69% 76%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 2% 35%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 14% 48%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 28% 87%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 65% 14%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 51% 36%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 6% 93%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), linear-gradient(135deg, rgb(23, 233, 173), rgb(29, 24, 208));
+    background-size: cover;
+    background-position: center;  
+    /* Full height */
+    min-height: 100vh; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #517599;
+}
+
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar .nav-link {
+    color: #ffffff;
+}
+
+.navbar .nav-link:hover {
+    color: #5292d1;
+}
+
+h1 {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #4e6f96;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #558bbd;
+}
+
+.btn-custom {
+    background-color: #343a40;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #6e7a86;
+}
+
+
+
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.form-signin h1 {
+    margin-top: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.form-signin form {
+    padding: 15px;
+}
+
+.form-signin form .btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+    transition: background 0.3s;
+}
+
+.form-signin form .btn:hover,
+.form-signin form .btn:focus {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: none;
+}
+
+.form-signin .form-control:focus {
+    border-color: #ced4da;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-signin .form-control {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-signin .checkbox.mb-3 {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.form-signin .checkbox.mb-3 .form-check-label {
+    font-size: 0.9em;
+}
+
+.form-signin .checkbox.mb-3 .form-check-input:checked {
+    background-color: #9ce060;
+    border-color: #81c63f;
+}
+
+.form-signin .checkbox.mb-3 .form-check-input {
+    margin-right: 0.5em;
+}
+
+.form-signin .checkbox.mb-3 label {
+    margin-bottom: 0;
+}
+
+.form-signin .checkbox.mb-3 label.form-check-label {
+    cursor: pointer;
+}
+
+.form-signin .checkbox.mb-3 label.form-check-label::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    border-radius: 0.2em;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    margin-right: 0.5em;
+    position: relative;
+    top: -0.1em;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.form-signin .checkbox.mb-3 label.form-check-label:hover::before {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-signin .checkbox.mb-3 label.form-check-label::after {
+    content: "";
+    width: 0.6em;
+    height: 0.6em;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 0.1em;
+}
+
+.form-signin .checkbox.mb-3 .form-check-input:checked + label.form-check-label::after {
+    opacity: 1;
+}
+
+.form-signin p.copy-right {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.l.bank-list {
+    position: relative;
+    background-image: radial-gradient(circle at 30% 86%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 55% 100%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 40% 75%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 7% 99%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 69% 76%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 2% 35%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 14% 48%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 28% 87%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 65% 14%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 51% 36%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 6% 93%, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 4%, transparent 4%, transparent 96%), linear-gradient(135deg, rgb(23, 233, 173), rgb(29, 24, 208));
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.bank-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .bank-list li {
+    margin-bottom: 10px;
+  }
+  
+  .bank-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .bank-list li a:hover {
+    text-decoration: underline;
+  }
+
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 600px;
+  }
+  
+  .card {
+    border-radius: 15px;
+  }
+  
+  .card-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .card-subtitle {
+    font-size: 20px;
+  }
+  
