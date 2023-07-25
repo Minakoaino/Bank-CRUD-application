@@ -3,9 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>UPDATE BANK</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <title>Update Bank</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
       </head>
       <body>
       <div class="bg"></div>
@@ -18,21 +22,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('create_bank') }}">Create Bank</a>
+                        <a class="nav-link" href="{{ url_for('create_bank') }}"><i class="fas fa-plus"></i> Create Bank</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('list_banks') }}">List Banks</a>
+                        <a class="nav-link" href="{{ url_for('list_banks') }}"><i class="fas fa-list"></i> List Banks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('update_bank') }}">Update Banks</a>
+                        <a class="nav-link" href="{{ url_for('update_bank') }}"><i class="fas fa-edit"></i> Update Banks</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{ url_for('delete_bank') }}">Delete Banks</a>
-                  </li>              
+                        <a class="nav-link" href="{{ url_for('delete_bank') }}"><i class="fas fa-trash"></i> Delete Banks</a>
+                    </li>
                 </ul>
             </div>
         </div>
-      </nav>
+    </nav>
       <head>
           <title>Update Bank</title>
       </head>

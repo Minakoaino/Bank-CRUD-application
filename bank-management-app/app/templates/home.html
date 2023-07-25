@@ -1,22 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
+
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Home</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100;1,300&display=swap" rel="stylesheet">
+            <!-- Added Font Awesome -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            <style>
+                
+        body {
+            font-family: 'Arial', sans-serif;
+            }
         .custom-card {
             background-color: #f8f9fa;
             border-radius: 10px;
             padding: 20px;
+            transition: 0.3s;
+        }
+        .custom-card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .title {
+            font-family: 'Arial', serif;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .btn-custom {
+            margin: 10px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-create {
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+        }
+        .btn-list {
+            background: linear-gradient(45deg, #fbc2eb 0%, #a6c1ee 99%, #a6c1ee 100%);
+        }
+        .btn-update {
+            background: linear-gradient(45deg, #84fab0 0%, #8fd3f4 99%, #8fd3f4 100%);
+        }
+        .btn-delete {
+            background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%);
         }
     </style>       
 </head>
 <body>
 <div class="bg"></div>
+   
+    <div class="bg"></div>
    
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -27,42 +77,43 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('create_bank') }}">Create Bank</a>
+                        <a class="nav-link" href="{{ url_for('create_bank') }}"><i class="fas fa-plus"></i> Create Bank</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('list_banks') }}">List Banks</a>
+                        <a class="nav-link" href="{{ url_for('list_banks') }}"><i class="fas fa-list"></i> List Banks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('update_bank') }}">Update Banks</a>
+                        <a class="nav-link" href="{{ url_for('update_bank') }}"><i class="fas fa-edit"></i> Update Banks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('delete_bank') }}">Delete Banks</a>
+                        <a class="nav-link" href="{{ url_for('delete_bank') }}"><i class="fas fa-trash"></i> Delete Banks</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     
+    
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="card custom-card">
-                    <div class="text-center">
+                    <div class="title">
                         <h1>Bank System App</h1>
                     </div>
                     
                     <div class="text-center mt-4">
-                        <a href="{{ url_for('create_bank') }}" class="btn btn-custom">Create Bank</a>
-                        <a href="{{ url_for('list_banks') }}" class="btn btn-custom">List Banks</a>
-                        <a href="{{ url_for('update_bank') }}" class="btn btn-custom">Update Banks</a>
-                        <a href="{{ url_for('delete_bank') }}" class="btn btn-custom">Delete Banks</a>
-                        
+                        <a href="{{ url_for('create_bank') }}" class="btn btn-custom btn-create"><i class="fas fa-plus"></i> Create Bank</a>
+                        <a href="{{ url_for('list_banks') }}" class="btn btn-custom btn-list"><i class="fas fa-list"></i> List Banks</a>
+                        <a href="{{ url_for('update_bank') }}" class="btn btn-custom btn-update"><i class="fas fa-edit"></i> Update Banks</a>
+                        <a href="{{ url_for('delete_bank') }}" class="btn btn-custom btn-delete"><i class="fas fa-trash"></i> Delete Banks</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

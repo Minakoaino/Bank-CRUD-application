@@ -8,11 +8,19 @@ from flask_sqlalchemy import SQLAlchemy
 @app.route('/bank/create', methods=['GET', 'POST'])
 def create_bank():
     if request.method == 'POST':
-        name = request.form['name']
-        location = request.form['location']
+        name = request.form.get('name', '').strip()
+        location = request.form.get('location', '').strip()
+        if not name or not location or len(name) > 50 or len(location) > 100:
+            # Input validation failed
+            return render_template('create_bank.html', error="Invalid input.")
         bank = Bank(name=name, location=location)
-        db.session.add(bank)
-        db.session.commit()
+        try:
+            db.session.add(bank)
+            db.session.commit()
+        except Exception as e:
+            # Handle database error
+            db.session.rollback()
+            return render_template('create_bank.html', error="Database error.")
         return redirect(url_for('list_banks'))
     return render_template('create_bank.html')
 
@@ -32,18 +40,7 @@ def view_bank(bank_id):
 def home():
     return render_template('home.html')
 
-# @app.route('/delete_bank', methods=['GET', 'POST'])
-# def delete_bank():
-#     if request.method == 'POST':
-#         bank_id = request.form['bank_id']
-#         bank = Bank.query.get_or_404(bank_id)
-#         db.session.delete(bank)
-#         db.session.commit()
-#         return redirect(url_for('list_banks'))  # Redirect to the list banks page after deletion
-#     else:
-#         banks = Bank.query.all()
-#         return render_template('delete_bank.html', banks=banks)
-
+#deleting banks
 @app.route('/delete_bank', methods=['GET', 'POST'])
 def delete_bank():
     if request.method == 'POST':
@@ -66,15 +63,33 @@ def delete_bank():
 def update_bank():
     if request.method == 'POST':
         bank_id = request.form['bank_id']
-        name = request.form['name']
-        location = request.form['location']
-        bank = Bank.query.get_or_404(bank_id)
-        bank.name = name
-        bank.location = location
-        db.session.commit()
+        name = request.form['name'].strip()
+        location = request.form['location'].strip()
+
+        # Input validation
+        if not name or not location or len(name) > 50 or len(location) > 100:
+            # Invalid input, render the form again with an error message
+            banks = Bank.query.all()
+            return render_template('update_bank.html', banks=banks, error="Invalid input.")
+
+        bank = Bank.query.get(bank_id)
+
+        if bank is None:
+            # No bank with the given id exists
+            return render_template('update_bank.html', error="No such bank exists.")
+
+        try:
+            bank.name = name
+            bank.location = location
+            db.session.commit()
+        except Exception as e:
+            # Handle database error
+            db.session.rollback()
+            banks = Bank.query.all()
+            return render_template('update_bank.html', banks=banks, error="Database error.")
+        
         return redirect(url_for('view_bank', bank_id=bank_id))
+
     banks = Bank.query.all() # get all banks
-    return render_template('update_bank.html', banks=banks)
-
-
+    return render_template('update_bank.html', banks=banks, error="Invalid input.")
 
