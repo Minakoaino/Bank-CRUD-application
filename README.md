@@ -38,7 +38,8 @@ source venv/bin/activate
     
 4. Install the dependencies:
 
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
 ```
 
 5. Set up the Flask environment variables:
@@ -46,6 +47,7 @@ source venv/bin/activate
 ```
 export FLASK_APP=run.py
 export FLASK_ENV=development
+```
 
 6. Run the application:
 
