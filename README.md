@@ -17,9 +17,12 @@ CRUD refers to the four basic operations you can perform on data in a database o
 
 ## Installation
 
+
 1. Clone this repository:
 
-git clone https://github.com/username/bank-app.git
+```
+git clone https://github.com/Minakoaino/Bank-CRUD-application.git
+```
 
 2. Navigate to the project directory:
 
@@ -30,11 +33,13 @@ cd bank-app
 3. Create a Python virtual environment and activate it:
 
 ```python3 -m venv venv
-source venv/bin/activate```
+source venv/bin/activate
+```
     
 4. Install the dependencies:
 
 ```pip install -r requirements.txt
+```
 
 5. Set up the Flask environment variables:
 
